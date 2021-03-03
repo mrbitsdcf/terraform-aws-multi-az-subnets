@@ -20,7 +20,7 @@ variable "vpc_id" {
 }
 
 variable "cidr_block" {
-  type        = string
+  type        = list(string)
   description = "Base CIDR block which is divided into subnet CIDR blocks (e.g. `10.0.0.0/16`)"
 }
 
