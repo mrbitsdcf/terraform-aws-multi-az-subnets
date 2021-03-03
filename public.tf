@@ -74,7 +74,8 @@ resource "aws_route_table" "public" {
   tags = merge(
     module.public_label.tags,
     {
-      "Name" = "${module.public_label.id}${module.this.delimiter}${element(var.availability_zones, count.index)}"
+      "Name" = element(var.public_names, count.index)
+      # "${module.public_label.id}${module.this.delimiter}${element(var.availability_zones, count.index)}"
       "AZ"   = element(var.availability_zones, count.index)
       "Type" = var.type
     },
