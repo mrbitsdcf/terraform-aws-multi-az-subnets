@@ -27,13 +27,13 @@ variable "cidr_block" {
 variable "private_names" {
   type        = list(string)
   description = "Names for private subnets (e.g. `10.0.0.0/16`)"
-  default     = ""
+  default     = []
 }
 
 variable "public_names" {
   type        = list(string)
   description = "Names for public subnets (e.g. `10.0.0.0/16`)"
-  default     = ""
+  default     = []
 }
 
 variable "igw_id" {
