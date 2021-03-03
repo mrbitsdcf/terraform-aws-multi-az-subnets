@@ -22,7 +22,8 @@ resource "aws_subnet" "private" {
   tags = merge(
     module.private_label.tags,
     {
-      "Name" = "${module.private_label.id}${module.this.delimiter}${element(var.availability_zones, count.index)}"
+      "Name" = element(var.private_names, count.index)
+      # "${module.private_label.id}${module.this.delimiter}${element(var.availability_zones, count.index)}"
       "AZ"   = var.availability_zones[count.index]
       "Type" = var.type
     },

@@ -24,6 +24,16 @@ variable "cidr_block" {
   description = "Base CIDR block which is divided into subnet CIDR blocks (e.g. `10.0.0.0/16`)"
 }
 
+variable "private_names" {
+  type        = list(string)
+  description = "Names for private subnets (e.g. `10.0.0.0/16`)"
+}
+
+variable "public_names" {
+  type        = list(string)
+  description = "Names for private subnets (e.g. `10.0.0.0/16`)"
+}
+
 variable "igw_id" {
   type        = string
   description = "Internet Gateway ID that is used as a default route when creating public subnets (e.g. `igw-9c26a123`)"
